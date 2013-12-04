@@ -1,16 +1,25 @@
-libspatialite-ios
+libspatialite-mobile
 =================
 
-A Makefile for automatically downloading and compiling [libspatialite](https://www.gaia-gis.it/fossil/libspatialite/index) (including its dependencies [SQLite](http://sqlite.org/index.html), [GEOS](http://trac.osgeo.org/geos/) and [PROJ.4](https://trac.osgeo.org/proj/)) statically for iOS.
+Fork元の libstatialite-iosのように、コロッとしたコンパイル結果をios、Android双方で作ってくれるスクリプトの生成を目的としています。
+Xamarinにバインディングする事が目的ですが、とりあえずShared Objectの形にすれば、Objective-C/Javaのネイティブドライバへのバインディング=>c# ラッパのバインディングではなく、sqliteのsoを読んで叩いてくれる.NETの実装（まだ見つけてないが、Mono.Data.Sqliteを差し替えればできる？）がもしあるなら、それを差し替えていきなりso => XamarinのSpatialiteドライバが作れるかも。
 
-Requirements
-------------
+目標
+----
 
-Xcode 5 with Command Line Tools installed.
+* iOS
+** so化（iOSなのでdylib?よく判らん）する（現状、各ライブラリの静的ライブラリまで）。
 
-Installation
-------------
+* Android
+** iOSを参考に、makeファイル作る
+*** 自分でtarball落としてきてso作るところまでやる
+*** 使うproj, geos, sqlite, spatialiteのバージョンもiOSに合わせる
+** コンパイルの参考：
+*** https://code.google.com/p/spatialite-android/source/browse/spatialite-android-library/build.sh
+** パッチ情報：
+*** https://code.google.com/p/spatialite-android/issues/detail?id=5
+*** https://code.google.com/p/spatialite-android/source/browse/#git%2Fspatialite-android-library%2Fjni%2Fpatches
+** Android NDKでのコンパイル、及びコンパイル完了後のXamarinバインディング等はこちらの記事が参考になりそう
+*** http://takeshich.hatenablog.com/entry/2013/12/04/000000
 
-Simply run
 
-	make
