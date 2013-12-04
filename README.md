@@ -1,5 +1,8 @@
-libspatialite-mobile
+libspatialite-xamarin-mobile
 =================
+
+This repository is just under planning phase.
+There are no schedule for completing works.
 
 Fork元の libstatialite-iosのように、コロッとしたコンパイル結果をios、Android双方で作ってくれるスクリプトの生成を目的としています。
 
@@ -9,28 +12,27 @@ Xamarinにバインディングする事が目的ですが、とりあえずShar
 目標
 ----
 
-* iOS
+# iOS
 
-** so化（iOSなのでdylib?よく判らん）する（現状、各ライブラリの静的ライブラリまで）。
+* so化（iOSなのでdylib?よく判らん）する（現状、各ライブラリの静的ライブラリまで）。  
+=>iOSでは共有ライブラリ使えないので、静的ライブラリまででよい模様。  
+http://docs.xamarin.com/guides/ios/advanced_topics/native_interop/
 
-* Android
+# Android
 
-** iOSを参考に、makeファイル作る
+* iOSを参考に、makeファイル作る  
+=> 自分でtarball落としてきてso作るところまでやる  
+=> 使うproj, geos, sqlite, spatialiteのバージョンもiOSに合わせる
 
-*** 自分でtarball落としてきてso作るところまでやる
-*** 使うproj, geos, sqlite, spatialiteのバージョンもiOSに合わせる
+* コンパイルの参考：  
+https://code.google.com/p/spatialite-android/source/browse/spatialite-android-library/build.sh
 
-** コンパイルの参考：
+* パッチ情報：  
+https://code.google.com/p/spatialite-android/issues/detail?id=5  
+https://code.google.com/p/spatialite-android/source/browse/#git%2Fspatialite-android-library%2Fjni%2Fpatches
 
-*** https://code.google.com/p/spatialite-android/source/browse/spatialite-android-library/build.sh
-
-** パッチ情報：
-
-*** https://code.google.com/p/spatialite-android/issues/detail?id=5
-*** https://code.google.com/p/spatialite-android/source/browse/#git%2Fspatialite-android-library%2Fjni%2Fpatches
-
-** Android NDKでのコンパイル、及びコンパイル完了後のXamarinバインディング等はこちらの記事が参考になりそう
-
-*** http://takeshich.hatenablog.com/entry/2013/12/04/000000
-
-
+* Android NDKでのコンパイル、及びコンパイル完了後のXamarinバインディング等はこちらの記事が参考になりそう  
+http://takeshich.hatenablog.com/entry/2013/12/04/000000  
+本家の標準ドキュメントはこちら  
+http://docs.xamarin.com/guides/android/advanced_topics/using_native_libraries/  
+http://docs.xamarin.com/guides/android/advanced_topics/cpu_architecture/
