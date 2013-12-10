@@ -1,0 +1,20 @@
+--- geos/include/geos/platform.h	2013-12-10 13:12:10.000000000 +0900
++++ geos/include/geos/platform_new.h	2013-12-10 13:15:25.000000000 +0900
+@@ -9,7 +9,7 @@
+ /* #undef HAVE_LONG_INT_64 */
+ 
+ /* Set to 1 if `long long int' is 64 bits */
+-#define HAVE_LONG_LONG_INT_64 1
++/* #undef HAVE_LONG_LONG_INT_64 */
+ 
+ /* Set to 1 if you have ieeefp.h */
+ /* #undef HAVE_IEEEFP_H */
+@@ -18,7 +18,7 @@
+ #define HAVE_FINITE 1
+ 
+ /* Has isfinite */
+-#define HAVE_ISFINITE 1
++/* #undef HAVE_ISFINITE */
+ 
+ /* Has isnan */
+ #define HAVE_ISNAN 1
